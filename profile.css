@@ -1,0 +1,446 @@
+/* css common */
+
+#space_80 {
+  height: 80px;
+  width: 100%;
+}
+
+#space_81 {
+  height: 81px;
+  width: 100%;
+}
+
+#space_40 {
+  height: 40px;
+  width: 100%;
+}
+
+/*  */
+body {
+  font-family: "Madimi One", sans-serif;
+  margin-top: 0px;
+}
+.content_container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background: rgba(179, 176, 176, 0.178);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+}
+.logo {
+  width: fit-content;
+}
+.menu {
+  width: fit-content;
+  margin: auto 0px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.menu > a {
+  font-weight: 100;
+  text-decoration: none;
+  color: black;
+  height: fit-content;
+}
+
+.menu > a:hover {
+  text-shadow: 1px 1px 10px black;
+}
+
+.header-content {
+  width: 75%;
+  margin: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+/* banner */
+
+.banner {
+  margin: 0px 40px;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.introduce {
+  width: 50%;
+}
+
+.introduce > h2 {
+  text-align: left;
+}
+.introduce > p {
+  margin-top: 48px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+/* make margin from location and work status */
+#location {
+  margin-bottom: 0px;
+}
+
+#work-status {
+  margin-top: 5px;
+}
+
+/*  */
+
+#box-color-img {
+  text-align: center;
+  margin-top: 25px;
+  z-index: 1;
+}
+/*make box image*/
+
+#box-color {
+  position: relative;
+  z-index: -1;
+  width: 245px;
+  height: 270px;
+  background-color: rgb(229, 231, 235);
+  margin-top: -250px;
+  margin-left: 40px;
+}
+
+#box-color-img > img {
+  object-fit: cover;
+  width: 230px;
+  height: 270px;
+  overflow: hidden;
+  border: 8px solid rgb(245, 232, 221);
+}
+/* button network */
+.icon_network {
+  display: flex;
+  margin-top: 48px;
+}
+
+.icon_network > button {
+  background-color: transparent;
+  border: 0px;
+}
+
+/* About me */
+
+.about_me_header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#header_about_text {
+  margin: 0px;
+  padding: 7px 20px;
+  border-radius: 12px;
+  background-color: #e5e7eb;
+}
+
+/*  */
+
+.menu_theme {
+  display: flex;
+  align-items: center;
+}
+
+.menu_theme > span {
+  display: none;
+}
+
+.thumbnail {
+  width: 100%;
+}
+
+.menu > button {
+  display: none;
+  background-color: transparent;
+  border-color: transparent;
+  height: fit-content;
+}
+
+.menu_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+}
+
+/*  */
+
+.logo > button {
+  background-color: transparent;
+  border: none;
+  display: none;
+}
+
+.menu_link {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+/* About css */
+
+.about_content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.about_image {
+  position: relative;
+  width: 100%;
+}
+
+#box_gray {
+  position: absolute;
+  z-index: -1;
+  top: 30px;
+  width: 250px;
+  height: 330px;
+  background-color: rgb(229, 231, 235);
+}
+
+#box_img {
+  position: relative;
+  margin-left: 15px;
+  width: 250px;
+  height: 330px;
+  border: 8px solid rgb(245, 232, 221);
+}
+
+#box_img > img {
+  width: 250px;
+  height: 330px;
+  object-fit: cover;
+}
+
+/* Skil css */
+
+#skill_title {
+  margin-top: 16px;
+}
+
+.skill_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#skill_item_title {
+  margin: 0px;
+}
+
+.skill_grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto;
+  row-gap: 48px;
+}
+
+
+.skill_item > img{
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+
+/*  */
+
+@media (max-width: 700px) {
+  .content_container {
+    width: 100%;
+  }
+
+  .banner {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .introduce {
+    width: 100%;
+  }
+
+  #box-color-img {
+    position: relative;
+    text-align: center;
+  }
+
+  #box-color-img > img {
+    object-fit: cover;
+    width: 190px;
+    height: 230px;
+    overflow: hidden;
+    border: 8px solid rgb(245, 232, 221);
+  }
+
+  #box-color {
+    z-index: -1;
+    position: relative;
+    text-align: center;
+    width: 230px;
+    height: 230px;
+    margin-top: -222px;
+    margin-left: 0px;
+    background-color: rgb(229, 231, 235);
+  }
+
+  .header_reposive {
+    height: 100%;
+    backdrop-filter: blur(100px);
+    background: rgba(0, 0, 0, 0.178);
+  }
+
+  .menu > * {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+  }
+
+  .header-content {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .menu {
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    align-items: start;
+  }
+
+  /* html, body {margin: 0; height: 100%; overflow: hidden} */
+
+  .logo {
+    width: 100%;
+    border-bottom: 1px solid gray;
+  }
+
+  .menu > button {
+    display: none;
+  }
+
+  .menu_container {
+    flex-direction: column;
+    gap: 15px;
+    align-items: start;
+  }
+
+  .menu_theme {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .menu_link {
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo > button {
+    display: block;
+  }
+
+  .menu_theme > span {
+    display: block;
+  }
+  /* display or not display list menu */
+  .menu,
+  .menu_theme,
+  .menu_link,
+  .logo > button {
+    display: none;
+  }
+
+  .display_css {
+    display: flex !important;
+  }
+
+  .display_css_block {
+    display: block !important;
+  }
+
+  .hide_css {
+    display: none !important;
+  }
+
+  #more {
+    display: block;
+  }
+
+  /* about reposive css */
+
+  .about_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #box_gray {
+    top: 30px;
+    position: absolute;
+    width: 250px;
+    height: 246px;
+    background-color: rgb(229, 231, 235);
+  }
+
+  #box_img {
+    position: relative;
+    z-index: 1;
+    left: 0px;
+    width: 206px;
+    height: 246px;
+    border: 8px solid rgb(245, 232, 221);
+  }
+
+  #box_img > img {
+    width: 206px;
+    height: 246px;
+    object-fit: cover;
+  }
+
+  .about_image {
+    margin: 0 auto;
+    position: relative;
+    width: fit-content;
+  }
+
+  #about_text {
+    margin: 0px 40px;
+  }
+
+  /* Skill Css Reposive */
+
+  .skill_grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+}

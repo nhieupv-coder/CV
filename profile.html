@@ -27,14 +27,14 @@
             </div>
             <div class="menu_link">
               <div class="menu">
-                <a href="/about">About</a>
-                <a href="/about">Work</a>
-                <a href="/about">Testimonials</a>
-                <a href="/about">Contact</a>
+                <a href="#header_about_me_text">About</a>
+                <a href="#header_experience_text">Work</a>
+                <a href="#header_skill_text">Skill</a>
+                <a href="#space_81">Contact</a>
               </div>
               <div class="menu_theme">
                 <span>Select themes</span>
-                <a><img src="./asserts/ci_sun.png" /></a>
+                <a onclick="changeToDarkMode()"><img src="./asserts/ci_sun.png" /></a>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
             </p>
 
             <div class="icon_network">
-              <button><img src="./asserts/icon_network/ic_git.svg" /></button>
+              <button onClick="goToLink('https://github.com/nhieupv-coder')"><img src="./asserts/icon_network/ic_git.svg" /></button>
               <button><img src="./asserts/icon_network/ic_twiter.svg" /></button>
               <button><img src="./asserts/icon_network/ic_figma.svg" /></button>
             </div>
@@ -78,7 +78,7 @@
         </div>
         <div id="space_80"></div>
         <div class="about_me_header">
-          <p id="header_about_text">About me</p>
+          <p id="header_about_me_text">About me</p>
         </div>
         <div id="space_40"></div>
         <div class="about_content">
@@ -110,7 +110,7 @@
         </div>
         <div id="space_80"></div>
         <div class="about_me_header">
-          <p id="header_about_text">Skill</p>
+          <p id="header_skill_text">Skill</p>
         </div>
         <center id="skill_title">
           The skills, tools and technologies I am really good at:
@@ -134,7 +134,7 @@
             <p id="skill_item_title">Thymeleaf</p>
            </div>
            <div class="skill_item">
-            <img src="./asserts/icon_skill/icon_restapi.png" />
+            <img src="./asserts/icon_skill/icon_restapi.svg" />
             <p id="skill_item_title">Rest API</p>
            </div>
            <div class="skill_item">
@@ -153,7 +153,7 @@
         </div>
         <div id="space_80"></div>
         <div class="about_me_header">
-          <p id="header_about_text">Experience</p>
+          <p id="header_experience_text">Experience</p>
         </div>
         <center id="skill_title">
           My work experience:
@@ -179,7 +179,7 @@
             <h3>Java software developer at FPT Software</h3>
             <ul>
               <li>I participated in a health application development project for Japanese customers </li>
-              <li>I'm join this project with role is a Backend developer and i have experience about requirements analysis, coding backend, UT backen function. </li>
+              <li>I'm join this project with role is a Backend developer and i have experience about requirements analysis, coding backend, UT backend function. </li>
               <li>I'm join this project with role is a Backend developer and i have experience about 
                   requirements analysis, coding backend, UT backen function. </li>
                <li> I'm working with java spring boot framework, resapi, postgrelDB, docker,...</li>
@@ -216,6 +216,7 @@
       </div>
     </div>
     <script>
+      var isDarkTheme = false;
       $("#more").on("click", function (event) {
         $(".header").addClass("header_reposive");
         $(".menu").addClass("display_css");
@@ -233,6 +234,27 @@
         $("#more").removeClass("hide_css");
         $("#close_menu_rep").removeClass("display_css_block");
       });
+
+      function goToLink(url) {
+        window.location = url;
+     }
+
+     function changeToDarkMode(){
+      if(!isDarkTheme){
+        $("body").addClass('body_dark_mode');
+        $(".menu").children("a").css("color","white");
+        $("#header_experience_text").css("background-color","#4e4e4e");
+        $("#header_skill_text").css("background-color","#4e4e4e");
+        $("#header_about_me_text").css("background-color","#4e4e4e");
+      }else{
+        $("body").removeClass("body_dark_mode")
+        $(".menu").children("a").css("color","black");
+        $("#header_experience_text").css("background-color","#e5e7eb");
+        $("#header_skill_text").css("background-color","#e5e7eb");
+        $("#header_about_me_text").css("background-color","#e5e7eb");
+      }
+      isDarkTheme = !isDarkTheme
+    }
     </script>
   </body>
 </html>

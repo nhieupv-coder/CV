@@ -1,4 +1,13 @@
 /* css common */
+html{
+  scroll-behavior:smooth
+}
+
+.body_dark_mode {
+  scroll-behavior: smooth;
+  background-color: black;
+  color: white;
+}
 
 #space_80 {
   height: 80px;
@@ -140,6 +149,10 @@ body {
   border: 0px;
 }
 
+.icon_network > button:hover{
+  cursor: pointer;
+}
+
 /* About me */
 
 .about_me_header {
@@ -148,7 +161,7 @@ body {
   justify-content: center;
 }
 
-#header_about_text {
+#header_experience_text, #header_skill_text, #header_about_me_text  {
   margin: 0px;
   padding: 7px 20px;
   border-radius: 12px;

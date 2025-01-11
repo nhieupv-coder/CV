@@ -28,9 +28,9 @@
             <div class="menu_link">
               <div class="menu">
                 <a href="#header_about_me_text">About</a>
-                <a href="#header_experience_text">Work</a>
                 <a href="#header_skill_text">Skill</a>
-                <a href="#space_81">Contact</a>
+                <a href="#header_experience_text">Work</a>
+                <a href="#header_experience_text">Certification</a>
               </div>
               <div class="menu_theme">
                 <span>Select themes</span>
@@ -44,10 +44,9 @@
         <div id="space_81"></div>
         <div class="banner">
           <div class="introduce">
-            <h2>Hi, I'm Mr. much 👋</h2>
+            <h2>Hi, I'm Mr. Nhieu Pham 👋</h2>
             <p>
-              I'm a full stack developer proficient in Java Spring Boot, React.js, HTML, and CSS. I focus on creating backend servers, specifically RESTful APIs, and developing front-end applications with React.js.
-I have experience working with PostgreSQL, Redis, Docker, and other related technologies. To date, I have had three experiences in the field of software development.
+              I am a passionate Fullstack Software Developer with over 3 years of experience specializing in backend development using the Java Spring Boot framework. My expertise lies in building robust and efficient API servers, and I have a deep understanding of modern backend technologies. Over the past year, I have transitioned into Android development using Kotlin, where I have successfully built mobile applications while continuously learning and adopting the latest technologies.
             </p>
             <p id="location">
               <img src="./asserts/ic_location.png" width="15px" height="15px" />
@@ -60,7 +59,7 @@ I have experience working with PostgreSQL, Redis, Docker, and other related tech
 
             <div class="icon_network">
               <button onClick="goToLink('https://github.com/nhieupv-coder')"><img src="./asserts/icon_network/ic_git.svg" /></button>
-              <button><img src="./asserts/icon_network/ic_twiter.svg" /></button>
+              <button><img onclick="goToLink(`https://www.linkedin.com/in/nhi%E1%BB%81u-ph%E1%BA%A1m-6a3126234/`)" src="./asserts/icon_network/ic_twiter.svg" /></button>
               <button><img src="./asserts/icon_network/ic_figma.svg" /></button>
             </div>
           </div>
@@ -74,7 +73,7 @@ I have experience working with PostgreSQL, Redis, Docker, and other related tech
           </div>
         </div>
         <div id="space_80"></div>
-        <div class="about_me_header">
+        <div class="partition_header">
           <p id="header_about_me_text">About me</p>
         </div>
         <div id="space_40"></div>
@@ -99,7 +98,7 @@ I have experience working with PostgreSQL, Redis, Docker, and other related tech
           </div>
         </div>
         <div id="space_80"></div>
-        <div class="about_me_header">
+        <div class="partition_header">
           <p id="header_skill_text">Skill</p>
         </div>
         <center id="skill_title">
@@ -140,21 +139,82 @@ I have experience working with PostgreSQL, Redis, Docker, and other related tech
             <img src="./asserts/icon_skill/icon-git.svg" />
             <p id="skill_item_title">Git</p>
            </div>
+           <div class="skill_item">
+            <img src="./asserts/icon_skill/ic-android.svg" />
+            <p id="skill_item_title">Android</p>
+           </div>
         </div>
         <div id="space_80"></div>
-        <div class="about_me_header">
+        <div class="partition_header">
+          <p id="header_experience_text">Certification</p>
+        </div>
+        <div class="lst_cert">
+          <img id="img_cert" src="asserts/cert/java.png" />
+          <img id="img_cert" src="asserts/cert/cicd.png" />
+          <img id="img_cert" src="asserts/cert/sql.png" />
+          <img id="img_cert" src="asserts/cert/android.png" />
+          <img id="img_cert" src="asserts/cert/react.png" />
+          <img id="img_cert" src="asserts/cert/react_redux.png" />
+        </div>
+        <div id="space_80"></div>
+        <div class="partition_header">
           <p id="header_experience_text">Experience</p>
         </div>
         <center id="skill_title">
           My work experience:
         </center>
         <div id="space_20"></div>
+        <div class="work_experience_content">
+          <div class="experience_item">
+            <div class="time_line">
+              <div class="time_line_text">
+              <h3> </h3>
+            </div>
+            </div>
+            <div class="ui_draw">
+              <div>
+                <div>
+                </div>
+            </div>
+            <div id="line_dash">
+            </div>
+            </div>
+            <div class="desctiption_time_line">
+            </div>
+          </div>
+        </div>
+        <div class="work_experience_content">
+          <div class="experience_item">
+            <div class="time_line">
+              <div class="time_line_text">
+              <h3>Fullstack software developer</h3>
+              <p>Dec 2023 - Present</p>
+            </div>
+            </div>
+            <div class="ui_draw">
+              <div id="border">
+                <div id="circle">
+                </div>
+            </div>
+            <div id="line_dash">
+            </div>
+            </div>
+            <div class="desctiption_time_line">
+              <h3>Fullstack software developer at FPT Software</h3>
+              <ul>
+                <li>I participated in a health application development project for Japanese customers. </li>
+                <li>I participated in a project involving both backend development and implementing features on the mobile app using Android Kotlin. </li>
+                <li>I worked with the Java Spring Boot framework, Android kotlin </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       <div class="work_experience_content">
         <div class="experience_item">
           <div class="time_line">
             <div class="time_line_text">
             <h3>Java software developer</h3>
-            <p>Sep 2021 - Present</p>
+            <p>Sep 2021 - Dec 2023</p>
           </div>
           </div>
           <div class="ui_draw">
@@ -202,26 +262,32 @@ I have experience working with PostgreSQL, Redis, Docker, and other related tech
       </div>
       </div>
       </div>
+      <audio controls autoplay style="display: none;">
+        <source src="asserts/music/music_background.m4a" type="audio/mp4">
+      </audio>
     </div>
     <script>
       var isDarkTheme = false;
-      $("#more").on("click", function (event) {
-        $(".header").addClass("header_reposive");
-        $(".menu").addClass("display_css");
-        $(".menu_theme").addClass("display_css");
-        $(".menu_link").addClass("display_css");
-        $("#more").addClass("hide_css");
-        $("#close_menu_rep").addClass("display_css_block");
-      });
+      $("#more").on("click", dispalyMenu);
+      $("#close_menu_rep").on("click", closeMenu);
 
-      $("#close_menu_rep").on("click", function (event) {
+      function closeMenu(){
         $(".header").removeClass("header_reposive");
         $(".menu").removeClass("display_css");
         $(".menu_theme").removeClass("display_css");
         $(".menu_link").removeClass("display_css");
         $("#more").removeClass("hide_css");
         $("#close_menu_rep").removeClass("display_css_block");
-      });
+      }
+
+      function dispalyMenu(){
+        $(".header").addClass("header_reposive");
+        $(".menu").addClass("display_css");
+        $(".menu_theme").addClass("display_css");
+        $(".menu_link").addClass("display_css");
+        $("#more").addClass("hide_css");
+        $("#close_menu_rep").addClass("display_css_block");
+      }
 
       function goToLink(url) {
         window.location = url;
@@ -241,7 +307,8 @@ I have experience working with PostgreSQL, Redis, Docker, and other related tech
         $("#header_skill_text").css("background-color","#e5e7eb");
         $("#header_about_me_text").css("background-color","#e5e7eb");
       }
-      isDarkTheme = !isDarkTheme
+      isDarkTheme = !isDarkTheme;
+      closeMenu();
     }
     </script>
   </body>

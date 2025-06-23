@@ -43,7 +43,7 @@
       <div class="content_container">
         <div id="space_81"></div>
         <div class="banner">
-          <div class="introduce">
+          <div class="introduce fade-in">
             <h2>Hi, I'm Mr. Nhieu Pham 👋</h2>
             <p>
               I am a passionate Fullstack Software Developer with over 3 years of experience specializing in backend development using the Java Spring Boot framework. My expertise lies in building robust and efficient API servers, and I have a deep understanding of modern backend technologies. Over the past year, I have transitioned into Android development using Kotlin, where I have successfully built mobile applications while continuously learning and adopting the latest technologies.
@@ -63,7 +63,7 @@
               <button><img src="./asserts/icon_network/ic_figma.svg" /></button>
             </div>
           </div>
-          <div class="align_thumbnail">
+          <div class="align_thumbnail fade-in-rtl">
             <div class="thumbnail">
               <div id="box-color-img">
                 <img src="./asserts/profile_pt.jpg" />
@@ -78,13 +78,13 @@
         </div>
         <div id="space_40"></div>
         <div class="about_content">
-          <div class="about_image">
+          <div class="about_image fade-in-rtl">
             <div id="box_img">
               <img src="./asserts/avatar.jpg" />
             </div>
             <div id="box_gray"></div>
           </div>
-          <div id="about_text">
+          <div id="about_text" class="fade-in">
             <h2>Curious about me? Here you have it:</h2>
             <p>
               I started learning programming in 2019. The first language I encountered was C++. With C++, I learned the basic syntax common to many programming languages I studied later.
@@ -101,12 +101,12 @@
         <div class="partition_header">
           <p id="header_skill_text">Skill</p>
         </div>
-        <center id="skill_title">
+        <center id="skill_title" class="fade-in">
           The skills, tools and technologies I am really good at:
         </center>
         <div id="space_40"></div>
-        <div class="skill_grid">
-           <div class="skill_item">
+        <div class="skill_grid  fade-in">
+           <div class="skill_item ">
             <img src="./asserts/icon_skill/icon-java.svg" />
             <p id="skill_item_title">Java</p>
            </div>
@@ -148,7 +148,7 @@
         <div class="partition_header">
           <p id="header_experience_text">Certification</p>
         </div>
-        <div class="lst_cert">
+        <div class="lst_cert fade-in">
           <img id="img_cert" src="asserts/cert/java.png" />
           <img id="img_cert" src="asserts/cert/cicd.png" />
           <img id="img_cert" src="asserts/cert/sql.png" />
@@ -310,6 +310,27 @@
       isDarkTheme = !isDarkTheme;
       closeMenu();
     }
+  $(".time_line").addClass('fade-in-ltr');
+  $(".desctiption_time_line").addClass('fade-in-rtl');
+
+// handle animation fade in
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const fadeElementRtl = document.querySelectorAll('.fade-in-rtl');
+    const fadeElementsLtr = document.querySelectorAll('.fade-in-ltr');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    fadeElements.forEach(el => observer.observe(el));
+    fadeElementsLtr.forEach(el => observer.observe(el));
+    fadeElementRtl.forEach(el => observer.observe(el));
     </script>
   </body>
 </html>

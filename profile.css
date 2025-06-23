@@ -349,7 +349,6 @@ body {
   padding: 1rem;
 }
 
-
 .ui_draw > #line_dash {
   border-right: dashed 2px rgb(134, 150, 155);
   height: 100%;
@@ -558,11 +557,43 @@ body {
   height: auto;
   aspect-ratio: 735/605;
 }
-.lst_cert{
+.lst_cert {
   margin-top: 20px;
   display: flex;
   gap: 20px;
   justify-content: center;
- align-items: center;
- flex-wrap: wrap ;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-rtl{
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-ltr{
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-rtl.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-ltr.visible {
+  opacity: 1;
+  transform: translateX(0);
 }

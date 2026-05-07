@@ -499,6 +499,43 @@ body {
     display: none !important;
   }
 
+  .experience_item {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .time_line, .desctiption_time_line {
+    flex: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .time_line_text {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .time_line_text h3,
+  .time_line_text p {
+    margin: 0 auto;
+  }
+
+  .desctiption_time_line ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .desctiption_time_line ul li {
+    text-indent: 0;
+  }
+
+  .ui_draw {
+    order: -1;
+  }
+
   #more {
     display: block;
   }

@@ -3,277 +3,341 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Profile</title>
+    <title>Nhieu Pham | Fullstack Software Developer</title>
     <link rel="stylesheet" href="profile.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRZ8W8XRRS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LRZ8W8XRRS');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRZ8W8XRRS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LRZ8W8XRRS');
+    </script>
   </head>
   <body>
     <div class="container">
-      <div class="header">
+      <header class="header">
         <div class="header-content">
           <div class="menu_container">
             <div class="logo">
-              <h2>Profile</h2>
-              <button id="close_menu_rep">
-                <img src="./asserts/ic_cancel_menu.svg" />
+              <h2>Nhieu Pham</h2>
+              <button id="close_menu_rep" aria-label="Close menu">
+                <img src="./asserts/ic_cancel_menu.svg" alt="" />
               </button>
-              <button id="more"><img src="./asserts/ic_more.svg" /></button>
+              <button id="more" aria-label="Open menu">
+                <img src="./asserts/ic_more.svg" alt="" />
+              </button>
             </div>
             <div class="menu_link">
-              <div class="menu">
+              <nav class="menu" aria-label="Primary navigation">
                 <a href="#header_about_me_text">About</a>
-                <a href="#header_skill_text">Skill</a>
+                <a href="#header_skill_text">Skills</a>
+                <a href="#header_certification_text">Certification</a>
                 <a href="#header_experience_text">Work</a>
-                <a href="#header_experience_text">Certification</a>
-              </div>
+              </nav>
               <div class="menu_theme">
-                <span>Select themes</span>
-                <a onclick="changeToDarkMode()"><img src="./asserts/ci_sun.png" /></a>
+                <span>Select theme</span>
+                <button onclick="changeToDarkMode()" aria-label="Toggle dark mode">
+                  <img src="./asserts/ci_sun.png" alt="" />
+                </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="content_container">
-        <div id="space_81"></div>
-        <div class="banner">
-          <div class="introduce fade-in">
-            <h2>Hi, I'm Mr. Nhieu Pham 👋</h2>
-            <p>
-              I am a passionate Fullstack Software Developer with over 3 years of experience specializing in backend development using the Java Spring Boot framework. My expertise lies in building robust and efficient API servers, and I have a deep understanding of modern backend technologies. Over the past year, I have transitioned into Android development using Kotlin, where I have successfully built mobile applications while continuously learning and adopting the latest technologies.
-            </p>
-            <p id="location">
-              <img src="./asserts/ic_location.png" width="15px" height="15px" />
-              Da Nang, Viet Nam
-            </p>
-            <p id="work-status">
-              <img src="./asserts/ic_work.png" width="15px" height="15px" />
-              Open To Work
-            </p>
+      </header>
 
+      <main class="content_container">
+        <section class="banner">
+          <div class="introduce fade-in">
+            <span class="eyebrow">Fullstack Software Developer | Android Developer</span>
+            <h1>Hi, I'm Nhieu Pham</h1>
+            <p>
+              I am a passionate Fullstack Software Developer with 5 years of experience across backend and mobile development. My core background is Java Spring Boot, RESTful APIs, PostgreSQL, and Docker, and since 2025 I have been focused on Android development with Kotlin.
+            </p>
+            <p>
+              I also explore practical AI engineering, including AI agents, MCP integrations, and automated workflows that connect tools, APIs, and business processes.
+            </p>
+            <div class="hero_stats">
+              <div>
+                <strong>5+</strong>
+                <span>Years experience</span>
+              </div>
+              <div>
+                <strong>2025+</strong>
+                <span>Android Kotlin focus</span>
+              </div>
+              <div>
+                <strong>AI</strong>
+                <span>Agents, MCP, Workflow</span>
+              </div>
+            </div>
+            <div class="meta_line">
+              <span>
+                <img src="./asserts/ic_location.png" width="15" height="15" alt="" />
+                Da Nang, Viet Nam
+              </span>
+              <span>
+                <img src="./asserts/ic_work.png" width="15" height="15" alt="" />
+                Open To Work
+              </span>
+            </div>
             <div class="icon_network">
-              <button onClick="goToLink('https://github.com/nhieupv-coder')"><img src="./asserts/icon_network/ic_git.svg" /></button>
-              <button><img onclick="goToLink(`https://www.linkedin.com/in/nhi%E1%BB%81u-ph%E1%BA%A1m-6a3126234/`)" src="./asserts/icon_network/ic_twiter.svg" /></button>
-              <button><img src="./asserts/icon_network/ic_figma.svg" /></button>
+              <button onClick="goToLink('https://github.com/nhieupv-coder')" aria-label="GitHub">
+                <img src="./asserts/icon_network/ic_git.svg" alt="" />
+              </button>
+              <button onClick="goToLink('https://www.linkedin.com/in/nhi%E1%BB%81u-ph%E1%BA%A1m-6a3126234/')" aria-label="LinkedIn">
+                <img src="./asserts/icon_network/ic_twiter.svg" alt="" />
+              </button>
+              <button aria-label="Figma">
+                <img src="./asserts/icon_network/ic_figma.svg" alt="" />
+              </button>
             </div>
           </div>
           <div class="align_thumbnail fade-in-rtl">
             <div class="thumbnail">
               <div id="box-color-img">
-                <img src="./asserts/profile_pt.jpg" />
+                <img src="./asserts/profile_pt.jpg" alt="Nhieu Pham profile" />
               </div>
               <div id="box-color"></div>
             </div>
           </div>
-        </div>
-        <div id="space_80"></div>
-        <div class="partition_header">
-          <p id="header_about_me_text">About me</p>
-        </div>
-        <div id="space_40"></div>
-        <div class="about_content">
-          <div class="about_image fade-in-rtl">
-            <div id="box_img">
-              <img src="./asserts/avatar.jpg" />
-            </div>
-            <div id="box_gray"></div>
+        </section>
+
+        <section class="section">
+          <div class="partition_header">
+            <p id="header_about_me_text">About me</p>
           </div>
-          <div id="about_text" class="fade-in">
-            <h2>Curious about me? Here you have it:</h2>
-            <p>
-              I started learning programming in 2019. The first language I encountered was C++. With C++, I learned the basic syntax common to many programming languages I studied later.
-            </p>
-            <p>
-               After that, I learned Java. I acquired knowledge in Java basics, OOP, Java EE, Java Swing, Java Servlet, and the Spring MVC framework, including Spring Boot. This foundation led me to become a Java backend developer. 
-            </p>
-            <p>
-              During my work, I also worked with JavaScript, HTML, and CSS. I found these technologies very interesting, so I decided to learn more about them, including Node.js and React.js. Now, I have become a full stack developer.
-            </p>
-          </div>
-        </div>
-        <div id="space_80"></div>
-        <div class="partition_header">
-          <p id="header_skill_text">Skill</p>
-        </div>
-        <center id="skill_title" class="fade-in">
-          The skills, tools and technologies I am really good at:
-        </center>
-        <div id="space_40"></div>
-        <div class="skill_grid  fade-in">
-           <div class="skill_item ">
-            <img src="./asserts/icon_skill/icon-java.svg" />
-            <p id="skill_item_title">Java</p>
-           </div>
-           <div class="skill_item">
-            <img src="./asserts/icon_skill/icon_spring_boot.svg" />
-            <p id="skill_item_title">Spring Boot</p>
-           </div>
-           <div class="skill_item">
-            <img src="./asserts/icon_skill/icon_docker.svg" />
-            <p id="skill_item_title">Docker</p>
-           </div>
-           <div class="skill_item">
-            <img src="./asserts/icon_skill/icon_thymleaf.svg" />
-            <p id="skill_item_title">Thymeleaf</p>
-           </div>
-           <div class="skill_item">
-            <img src="./asserts/icon_skill/icon_restapi.svg" />
-            <p id="skill_item_title">Rest API</p>
-           </div>
-           <div class="skill_item">
-            <img src="./asserts/icon_skill/icon-kotlin.svg" />
-            <p id="skill_item_title">Kotlin</p>
-           </div>
- 
-           <div class="skill_item">
-            <img src="./asserts/icon_skill/icon-postgresql.svg" />
-            <p id="skill_item_title">PostgreSQL</p>
-           </div>
-           <div class="skill_item">
-            <img src="./asserts/icon_skill/icon-git.svg" />
-            <p id="skill_item_title">Git</p>
-           </div>
-           <div class="skill_item">
-            <img src="./asserts/icon_skill/ic-android.svg" />
-            <p id="skill_item_title">Android</p>
-           </div>
-        </div>
-        <div id="space_80"></div>
-        <div class="partition_header">
-          <p id="header_experience_text">Certification</p>
-        </div>
-        <div class="lst_cert fade-in">
-          <img id="img_cert" src="asserts/cert/java.png" />
-          <img id="img_cert" src="asserts/cert/cicd.png" />
-          <img id="img_cert" src="asserts/cert/sql.png" />
-          <img id="img_cert" src="asserts/cert/android.png" />
-          <img id="img_cert" src="asserts/cert/react.png" />
-          <img id="img_cert" src="asserts/cert/react_redux.png" />
-        </div>
-        <div id="space_80"></div>
-        <div class="partition_header">
-          <p id="header_experience_text">Experience</p>
-        </div>
-        <center id="skill_title">
-          My work experience:
-        </center>
-        <div id="space_20"></div>
-        <div class="work_experience_content">
-          <div class="experience_item">
-            <div class="time_line">
-              <div class="time_line_text">
-              <h3> </h3>
-            </div>
-            </div>
-            <div class="ui_draw">
-              <div>
-                <div>
-                </div>
-            </div>
-            <div id="line_dash">
-            </div>
-            </div>
-            <div class="desctiption_time_line">
-            </div>
-          </div>
-        </div>
-        <div class="work_experience_content">
-          <div class="experience_item">
-            <div class="time_line">
-              <div class="time_line_text">
-              <h3>Fullstack software developer</h3>
-              <p>Dec 2023 - Present</p>
-            </div>
-            </div>
-            <div class="ui_draw">
-              <div id="border">
-                <div id="circle">
-                </div>
-            </div>
-            <div id="line_dash">
-            </div>
-            </div>
-            <div class="desctiption_time_line">
-              <h3>Fullstack software developer at FPT Software</h3>
-              <ul>
-                <li>I participated in a health application development project for Japanese customers. </li>
-                <li>I participated in a project involving both backend development and implementing features on the mobile app using Android Kotlin. </li>
-                <li>I worked with the Java Spring Boot framework, Android kotlin </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      <div class="work_experience_content">
-        <div class="experience_item">
-          <div class="time_line">
-            <div class="time_line_text">
-            <h3>Java software developer</h3>
-            <p>Sep 2021 - Dec 2023</p>
-          </div>
-          </div>
-          <div class="ui_draw">
-            <div id="border">
-              <div id="circle">
+          <div class="about_content">
+            <div class="about_image fade-in-rtl">
+              <div id="box_img">
+                <img src="./asserts/avatar.jpg" alt="Nhieu Pham avatar" />
               </div>
+              <div id="box_gray"></div>
+            </div>
+            <div id="about_text" class="fade-in">
+              <h2>Curious about me? Here you have it:</h2>
+              <p>
+                I started learning programming in 2019. The first language I encountered was C++, which helped me understand the syntax and programming mindset used across many languages.
+              </p>
+              <p>
+                After that, I learned Java, OOP, Java EE, Java Swing, Java Servlet, Spring MVC, and Spring Boot. This foundation led me to become a Java backend developer.
+              </p>
+              <p>
+                During my work, I also worked with JavaScript, HTML, CSS, Node.js, React.js, and Android Kotlin. From 2025 until now, my daily work has focused more deeply on Android: building mobile features, integrating APIs, handling app flows, and improving user-facing product experiences.
+              </p>
+              <p>
+                Recently, I have also expanded into AI-enabled development by learning agent workflows, MCP servers, tool calling, and workflow automation patterns.
+              </p>
+            </div>
           </div>
-          <div id="line_dash">
+        </section>
+
+        <section class="section">
+          <div class="partition_header">
+            <p id="header_skill_text">Skills</p>
           </div>
+          <p class="section_intro fade-in">
+            The skills, tools and technologies I am really good at:
+          </p>
+          <div class="skill_grid fade-in">
+            <div class="skill_item">
+              <img src="./asserts/icon_skill/icon-java.svg" alt="" />
+              <p>Java</p>
+            </div>
+            <div class="skill_item">
+              <img src="./asserts/icon_skill/icon_spring_boot.svg" alt="" />
+              <p>Spring Boot</p>
+            </div>
+            <div class="skill_item">
+              <img src="./asserts/icon_skill/icon_docker.svg" alt="" />
+              <p>Docker</p>
+            </div>
+            <div class="skill_item">
+              <img src="./asserts/icon_skill/icon_thymleaf.svg" alt="" />
+              <p>Thymeleaf</p>
+            </div>
+            <div class="skill_item">
+              <img src="./asserts/icon_skill/icon_restapi.svg" alt="" />
+              <p>REST API</p>
+            </div>
+            <div class="skill_item">
+              <img src="./asserts/icon_skill/icon-kotlin.svg" alt="" />
+              <p>Kotlin</p>
+            </div>
+            <div class="skill_item">
+              <img src="./asserts/icon_skill/icon-postgresql.svg" alt="" />
+              <p>PostgreSQL</p>
+            </div>
+            <div class="skill_item">
+              <img src="./asserts/icon_skill/icon-git.svg" alt="" />
+              <p>Git</p>
+            </div>
+            <div class="skill_item">
+              <img src="./asserts/icon_skill/ic-android.svg" alt="" />
+              <p>Android</p>
+            </div>
           </div>
-          <div class="desctiption_time_line">
-            <h3>Java software developer at FPT Software</h3>
+          <div class="ai_expertise fade-in">
+            <div class="ai_intro">
+              <span class="eyebrow">AI knowledge</span>
+              <h2>Applied AI engineering</h2>
+              <p>
+                I understand how to apply AI capabilities inside real products by connecting models with tools, structured context, and repeatable workflows.
+              </p>
+            </div>
+            <div class="ai_grid">
+              <div class="ai_card">
+                <h3>AI Agents</h3>
+                <p>Designing agents that can plan, call tools, use context, and complete multi-step tasks.</p>
+              </div>
+              <div class="ai_card">
+                <h3>MCP</h3>
+                <p>Understanding Model Context Protocol concepts for connecting AI assistants with external systems and data.</p>
+              </div>
+              <div class="ai_card">
+                <h3>Workflow Automation</h3>
+                <p>Building practical workflows that combine APIs, business rules, and AI-assisted decision making.</p>
+              </div>
+            </div>
+          </div>
+          <div class="mobile_focus fade-in">
+            <div>
+              <span class="eyebrow">Mobile focus</span>
+              <h2>Android development since 2025</h2>
+              <p>
+                I have hands-on experience building Android app features with Kotlin, connecting mobile screens to backend APIs, handling application flows, and collaborating across backend and mobile responsibilities.
+              </p>
+            </div>
             <ul>
-              <li>I participated in a health application development project for Japanese customers. </li>
-              <li>I joined this project as a backend developer, gaining experience in requirements analysis, backend coding, and unit testing of backend functions. </li>
-              <li>I worked with the Java Spring Boot framework, RESTful APIs, PostgreSQL, Docker, and other related technologies. </li>
+              <li>Kotlin-based Android feature development</li>
+              <li>REST API integration and data flow handling</li>
+              <li>Mobile UI implementation and product iteration</li>
+              <li>Fullstack collaboration between backend services and mobile apps</li>
             </ul>
           </div>
-        </div>
-      </div>
-      <div class="work_experience_content">
-        <div class="experience_item">
-          <div class="time_line">
-            <div class="time_line_text">
-            <h3>College Student</h3>
-            <p>Sep 2019 - Sep 2021</p>
+        </section>
+
+        <section class="section">
+          <div class="partition_header">
+            <p id="header_certification_text">Certification</p>
           </div>
+          <div class="lst_cert fade-in">
+            <img class="img_cert" src="asserts/cert/java.png" alt="Java certificate" />
+            <img class="img_cert" src="asserts/cert/cicd.png" alt="CI/CD certificate" />
+            <img class="img_cert" src="asserts/cert/sql.png" alt="SQL certificate" />
+            <img class="img_cert" src="asserts/cert/android.png" alt="Android certificate" />
+            <img class="img_cert" src="asserts/cert/react.png" alt="React certificate" />
+            <img class="img_cert" src="asserts/cert/react_redux.png" alt="React Redux certificate" />
           </div>
-          <div class="ui_draw">
-            <div id="border">
-              <div id="circle_2">
+        </section>
+
+        <section class="section">
+          <div class="partition_header">
+            <p id="header_experience_text">Experience</p>
+          </div>
+          <p class="section_intro">My work experience:</p>
+          <div class="timeline">
+            <article class="experience_item">
+              <div class="time_line">
+                <div class="time_line_text">
+                  <h3>Android developer</h3>
+                  <p>2025 - Present</p>
+                </div>
               </div>
+              <div class="ui_draw">
+                <div class="border">
+                  <div class="circle mobile_circle"></div>
+                </div>
+              </div>
+              <div class="desctiption_time_line">
+                <h3>Android development focus at FPT Software</h3>
+                <ul>
+                  <li>I have been working more deeply on Android development with Kotlin since 2025.</li>
+                  <li>I implement mobile app features, integrate REST APIs, and connect app screens with backend services.</li>
+                  <li>I use my backend experience to understand data contracts, troubleshoot API behavior, and build smoother mobile workflows.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="experience_item">
+              <div class="time_line">
+                <div class="time_line_text">
+                  <h3>Fullstack software developer</h3>
+                  <p>Dec 2023 - 2024</p>
+                </div>
+              </div>
+              <div class="ui_draw">
+                <div class="border">
+                  <div class="circle"></div>
+                </div>
+              </div>
+              <div class="desctiption_time_line">
+                <h3>Fullstack software developer at FPT Software</h3>
+                <ul>
+                  <li>I participated in a health application development project for Japanese customers.</li>
+                  <li>I handled backend development and started contributing to mobile app features using Android Kotlin.</li>
+                  <li>I worked with Java Spring Boot, Android Kotlin, RESTful APIs, PostgreSQL, Docker, and AI-assisted workflow exploration.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="experience_item">
+              <div class="time_line">
+                <div class="time_line_text">
+                  <h3>Java software developer</h3>
+                  <p>Sep 2021 - Dec 2023</p>
+                </div>
+              </div>
+              <div class="ui_draw">
+                <div class="border">
+                  <div class="circle"></div>
+                </div>
+              </div>
+              <div class="desctiption_time_line">
+                <h3>Java software developer at FPT Software</h3>
+                <ul>
+                  <li>I participated in a health application development project for Japanese customers.</li>
+                  <li>I joined this project as a backend developer, gaining experience in requirements analysis, backend coding, and unit testing.</li>
+                  <li>I worked with Java Spring Boot, RESTful APIs, PostgreSQL, Docker, and other related technologies.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="experience_item">
+              <div class="time_line">
+                <div class="time_line_text">
+                  <h3>College Student</h3>
+                  <p>Sep 2019 - Sep 2021</p>
+                </div>
+              </div>
+              <div class="ui_draw">
+                <div class="border">
+                  <div class="circle circle_alt"></div>
+                </div>
+              </div>
+              <div class="desctiption_time_line">
+                <h3>Student of Faculty of Information Technology at FPT Polytechnic College</h3>
+                <ul>
+                  <li>I graduated with a GPA of 9.1.</li>
+                  <li>First prize of FPT EDU Hackathon 2021.</li>
+                </ul>
+              </div>
+            </article>
           </div>
-          <div id="line_dash">
-          </div>
-          </div>
-          <div class="desctiption_time_line">
-            <h3>Student of Faculty of Information Technology at FPT Polytechnic College </h3>
-            <ul>
-              <li>I graduated with a GPA of 9.1. </li>
-              <li>First prize of FPT EDU Hackathon 2021 </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      </div>
-      </div>
+        </section>
+      </main>
+
       <audio controls autoplay style="display: none;">
-        <source src="asserts/music/music_background.m4a" type="audio/mp4">
+        <source src="asserts/music/music_background.m4a" type="audio/mp4" />
       </audio>
     </div>
+
     <script>
       var isDarkTheme = false;
       $("#more").on("click", dispalyMenu);
@@ -299,46 +363,48 @@
 
       function goToLink(url) {
         window.location = url;
-     }
-
-     function changeToDarkMode(){
-      if(!isDarkTheme){
-        $("body").addClass('body_dark_mode');
-        $(".menu").children("a").css("color","white");
-        $("#header_experience_text").css("background-color","#4e4e4e");
-        $("#header_skill_text").css("background-color","#4e4e4e");
-        $("#header_about_me_text").css("background-color","#4e4e4e");
-      }else{
-        $("body").removeClass("body_dark_mode")
-        $(".menu").children("a").css("color","black");
-        $("#header_experience_text").css("background-color","#e5e7eb");
-        $("#header_skill_text").css("background-color","#e5e7eb");
-        $("#header_about_me_text").css("background-color","#e5e7eb");
       }
-      isDarkTheme = !isDarkTheme;
-      closeMenu();
-    }
-  $(".time_line").addClass('fade-in-ltr');
-  $(".desctiption_time_line").addClass('fade-in-rtl');
 
-// handle animation fade in
-    const fadeElements = document.querySelectorAll('.fade-in');
-    const fadeElementRtl = document.querySelectorAll('.fade-in-rtl');
-    const fadeElementsLtr = document.querySelectorAll('.fade-in-ltr');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+      function changeToDarkMode(){
+        if(!isDarkTheme){
+          $("body").addClass("body_dark_mode");
+          $(".menu").children("a").css("color","white");
+          $("#header_experience_text").css("background-color","#1f2937");
+          $("#header_certification_text").css("background-color","#1f2937");
+          $("#header_skill_text").css("background-color","#1f2937");
+          $("#header_about_me_text").css("background-color","#1f2937");
+        }else{
+          $("body").removeClass("body_dark_mode");
+          $(".menu").children("a").css("color","black");
+          $("#header_experience_text").css("background-color","#eef2ff");
+          $("#header_certification_text").css("background-color","#eef2ff");
+          $("#header_skill_text").css("background-color","#eef2ff");
+          $("#header_about_me_text").css("background-color","#eef2ff");
         }
-      });
-    }, {
-      threshold: 0.1
-    });
+        isDarkTheme = !isDarkTheme;
+        closeMenu();
+      }
 
-    fadeElements.forEach(el => observer.observe(el));
-    fadeElementsLtr.forEach(el => observer.observe(el));
-    fadeElementRtl.forEach(el => observer.observe(el));
+      $(".time_line").addClass("fade-in-ltr");
+      $(".desctiption_time_line").addClass("fade-in-rtl");
+
+      const fadeElements = document.querySelectorAll(".fade-in");
+      const fadeElementRtl = document.querySelectorAll(".fade-in-rtl");
+      const fadeElementsLtr = document.querySelectorAll(".fade-in-ltr");
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      fadeElements.forEach(el => observer.observe(el));
+      fadeElementsLtr.forEach(el => observer.observe(el));
+      fadeElementRtl.forEach(el => observer.observe(el));
     </script>
   </body>
 </html>

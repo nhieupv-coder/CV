@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nhieu Pham | Fullstack Software Developer</title>
     <link rel="stylesheet" href="profile.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRZ8W8XRRS"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -26,7 +19,7 @@
         <div class="header-content">
           <div class="menu_container">
             <div class="logo">
-              <h2>Nhieu Pham</h2>
+              <a class="brand_mark" href="#top" aria-label="Nhieu Pham home">NP</a>
               <button id="close_menu_rep" aria-label="Close menu">
                 <img src="./asserts/ic_cancel_menu.svg" alt="" />
               </button>
@@ -38,12 +31,12 @@
               <nav class="menu" aria-label="Primary navigation">
                 <a href="#header_about_me_text">About</a>
                 <a href="#header_skill_text">Skills</a>
-                <a href="#header_certification_text">Certification</a>
+                <a href="#header_certification_text">Certificates</a>
                 <a href="#header_experience_text">Work</a>
               </nav>
               <div class="menu_theme">
-                <span>Select theme</span>
-                <button onclick="changeToDarkMode()" aria-label="Toggle dark mode">
+                <span>Theme</span>
+                <button id="theme_toggle" aria-label="Toggle dark mode">
                   <img src="./asserts/ci_sun.png" alt="" />
                 </button>
               </div>
@@ -52,30 +45,42 @@
         </div>
       </header>
 
-      <main class="content_container">
+      <main class="content_container" id="top">
         <section class="banner">
           <div class="introduce fade-in">
-            <span class="eyebrow">Fullstack Software Developer | Android Developer</span>
-            <h1>Hi, I'm Nhieu Pham</h1>
+            <span class="eyebrow">Fullstack Software Developer / Android Developer</span>
+            <h1>Hi, I'm Nhieu Pham.</h1>
             <p>
-              I am a passionate Fullstack Software Developer with 5 years of experience across backend and mobile development. My core background is Java Spring Boot, RESTful APIs, PostgreSQL, and Docker, and since 2025 I have been focused on Android development with Kotlin.
+              I am a Fullstack Software Developer and Android Developer based in Da Nang, Viet Nam, with 5 years of hands-on experience across Java Spring Boot, RESTful APIs, PostgreSQL, Docker, and Android Kotlin.
             </p>
             <p>
-              I also explore practical AI engineering, including AI agents, MCP integrations, and automated workflows that connect tools, APIs, and business processes.
+              This profile introduces my background, skills, certificates, and work experience across backend development, mobile development, and practical AI workflow exploration.
             </p>
+            <div class="hero_actions">
+              <a class="primary_cta" href="#header_experience_text">View experience</a>
+              <a class="secondary_cta" href="https://github.com/nhieupv-coder" target="_blank" rel="noreferrer">GitHub profile</a>
+            </div>
             <div class="hero_stats">
               <div>
                 <strong>5+</strong>
                 <span>Years experience</span>
               </div>
               <div>
-                <strong>2025+</strong>
+                <strong>2025</strong>
                 <span>Android Kotlin focus</span>
               </div>
               <div>
                 <strong>AI</strong>
                 <span>Agents, MCP, Workflow</span>
               </div>
+            </div>
+            <div class="role_stack" aria-label="Primary technical focus">
+              <span>Java Spring Boot</span>
+              <span>Kotlin Android</span>
+              <span>REST APIs</span>
+              <span>PostgreSQL</span>
+              <span>Docker</span>
+              <span>AI Workflows</span>
             </div>
             <div class="meta_line">
               <span>
@@ -101,6 +106,10 @@
           </div>
           <div class="align_thumbnail fade-in-rtl">
             <div class="thumbnail">
+              <div class="photo_caption">
+                <span>Available for backend / Android roles</span>
+                <strong>Da Nang, Viet Nam</strong>
+              </div>
               <div id="box-color-img">
                 <img src="./asserts/profile_pt.jpg" alt="Nhieu Pham profile" />
               </div>
@@ -121,7 +130,8 @@
               <div id="box_gray"></div>
             </div>
             <div id="about_text" class="fade-in">
-              <h2>Curious about me? Here you have it:</h2>
+              <span class="section_number">01</span>
+              <h2>Backend foundation, mobile execution, product-minded delivery.</h2>
               <p>
                 I started learning programming in 2019. The first language I encountered was C++, which helped me understand the syntax and programming mindset used across many languages.
               </p>
@@ -143,7 +153,7 @@
             <p id="header_skill_text">Skills</p>
           </div>
           <p class="section_intro fade-in">
-            The skills, tools and technologies I am really good at:
+            The tools and technologies I use to move between backend services, Android screens, and automation workflows.
           </p>
           <div class="skill_grid fade-in">
             <div class="skill_item">
@@ -225,7 +235,7 @@
 
         <section class="section">
           <div class="partition_header">
-            <p id="header_certification_text">Certification</p>
+            <p id="header_certification_text">Certificates</p>
           </div>
           <div class="lst_cert fade-in">
             <img class="img_cert" src="asserts/cert/java.png" alt="Java certificate" />
@@ -333,32 +343,35 @@
         </section>
       </main>
 
-      <audio controls autoplay style="display: none;">
-        <source src="asserts/music/music_background.m4a" type="audio/mp4" />
-      </audio>
     </div>
 
     <script>
-      var isDarkTheme = false;
-      $("#more").on("click", dispalyMenu);
-      $("#close_menu_rep").on("click", closeMenu);
+      let isDarkTheme = false;
+      const body = document.body;
+      const header = document.querySelector(".header");
+      const menu = document.querySelector(".menu");
+      const menuTheme = document.querySelector(".menu_theme");
+      const menuLink = document.querySelector(".menu_link");
+      const moreButton = document.getElementById("more");
+      const closeMenuButton = document.getElementById("close_menu_rep");
+      const themeToggle = document.getElementById("theme_toggle");
 
       function closeMenu(){
-        $(".header").removeClass("header_reposive");
-        $(".menu").removeClass("display_css");
-        $(".menu_theme").removeClass("display_css");
-        $(".menu_link").removeClass("display_css");
-        $("#more").removeClass("hide_css");
-        $("#close_menu_rep").removeClass("display_css_block");
+        header.classList.remove("header_reposive");
+        menu.classList.remove("display_css");
+        menuTheme.classList.remove("display_css");
+        menuLink.classList.remove("display_css");
+        moreButton.classList.remove("hide_css");
+        closeMenuButton.classList.remove("display_css_block");
       }
 
       function dispalyMenu(){
-        $(".header").addClass("header_reposive");
-        $(".menu").addClass("display_css");
-        $(".menu_theme").addClass("display_css");
-        $(".menu_link").addClass("display_css");
-        $("#more").addClass("hide_css");
-        $("#close_menu_rep").addClass("display_css_block");
+        header.classList.add("header_reposive");
+        menu.classList.add("display_css");
+        menuTheme.classList.add("display_css");
+        menuLink.classList.add("display_css");
+        moreButton.classList.add("hide_css");
+        closeMenuButton.classList.add("display_css_block");
       }
 
       function goToLink(url) {
@@ -367,26 +380,24 @@
 
       function changeToDarkMode(){
         if(!isDarkTheme){
-          $("body").addClass("body_dark_mode");
-          $(".menu").children("a").css("color","white");
-          $("#header_experience_text").css("background-color","#1f2937");
-          $("#header_certification_text").css("background-color","#1f2937");
-          $("#header_skill_text").css("background-color","#1f2937");
-          $("#header_about_me_text").css("background-color","#1f2937");
+          body.classList.add("body_dark_mode");
         }else{
-          $("body").removeClass("body_dark_mode");
-          $(".menu").children("a").css("color","black");
-          $("#header_experience_text").css("background-color","#eef2ff");
-          $("#header_certification_text").css("background-color","#eef2ff");
-          $("#header_skill_text").css("background-color","#eef2ff");
-          $("#header_about_me_text").css("background-color","#eef2ff");
+          body.classList.remove("body_dark_mode");
         }
         isDarkTheme = !isDarkTheme;
         closeMenu();
       }
 
-      $(".time_line").addClass("fade-in-ltr");
-      $(".desctiption_time_line").addClass("fade-in-rtl");
+      moreButton.addEventListener("click", dispalyMenu);
+      closeMenuButton.addEventListener("click", closeMenu);
+      themeToggle.addEventListener("click", changeToDarkMode);
+
+      document.querySelectorAll(".menu a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.querySelectorAll(".time_line").forEach((item) => item.classList.add("fade-in-ltr"));
+      document.querySelectorAll(".desctiption_time_line").forEach((item) => item.classList.add("fade-in-rtl"));
 
       const fadeElements = document.querySelectorAll(".fade-in");
       const fadeElementRtl = document.querySelectorAll(".fade-in-rtl");

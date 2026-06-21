@@ -232,7 +232,6 @@ a { color: inherit; }
   gap: clamp(42px, 7vw, 96px);
   min-height: calc(100dvh - 116px);
   padding-bottom: 72px;
-  overflow: hidden;
 }
 
 #hero_canvas {
@@ -349,6 +348,7 @@ a { color: inherit; }
 
 .gradient_name {
   display: block;
+  padding: 0 6px 6px 0;
   background: linear-gradient(135deg, var(--primary) 0%, #38bdf8 45%, var(--accent) 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -1017,9 +1017,10 @@ a { color: inherit; }
 }
 .contact_inner h2 {
   margin: 0;
+  padding: 0 6px 4px;
   font-size: clamp(2.4rem, 5vw, 4.4rem);
   font-weight: 900;
-  line-height: 0.98;
+  line-height: 1.05;
   letter-spacing: -0.03em;
   background: linear-gradient(135deg, var(--primary) 0%, #38bdf8 45%, var(--accent) 100%);
   background-size: 200% 200%;

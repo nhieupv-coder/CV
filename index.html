@@ -136,15 +136,50 @@
           </div>
 
           <div class="align_thumbnail fade-in-rtl">
-            <div class="thumbnail tilt_target tilt_strong">
-              <div class="photo_caption float_anim">
-                <span>Available for backend / Android roles</span>
-                <strong>Da Nang, Viet Nam</strong>
+            <div class="card_scene">
+              <div class="card_flip flip_clickable" id="flip_card">
+
+                <!-- Mặt trước: ảnh profile -->
+                <div class="card_face card_front">
+                  <div class="thumbnail">
+                    <div class="photo_caption float_anim">
+                      <span>Available for backend / Android roles</span>
+                      <strong>Da Nang, Viet Nam</strong>
+                    </div>
+                    <div id="box-color-img">
+                      <img src="./asserts/profile_pt.jpg" alt="Nhieu Pham profile" />
+                    </div>
+                    <div id="box-color"></div>
+                  </div>
+                </div>
+
+                <!-- Mặt sau: info card -->
+                <div class="card_face card_back">
+                  <div class="card_back_inner">
+                    <div class="card_back_logo">NP</div>
+                    <div class="card_back_avatar">
+                      <img src="./asserts/avatar.jpg" alt="Nhieu Pham" />
+                    </div>
+                    <h3 class="card_back_name">Nhieu Pham</h3>
+                    <p class="card_back_role">Fullstack · Android · AI</p>
+                    <div class="card_back_badges">
+                      <span>📍 Da Nang, VN</span>
+                      <span>⭐ 5+ Years</span>
+                      <span class="card_badge_green">💼 Open to Work</span>
+                    </div>
+                    <div class="card_back_divider"></div>
+                    <div class="card_back_stack">
+                      <img src="./asserts/icon_skill/icon-java.svg" alt="Java" title="Java" />
+                      <img src="./asserts/icon_skill/icon-kotlin.svg" alt="Kotlin" title="Kotlin" />
+                      <img src="./asserts/icon_skill/icon_spring_boot.svg" alt="Spring Boot" title="Spring Boot" />
+                      <img src="./asserts/icon_skill/icon_docker.svg" alt="Docker" title="Docker" />
+                      <img src="./asserts/icon_skill/ic-android.svg" alt="Android" title="Android" />
+                    </div>
+                    <a href="mailto:phamvannhieu2001@gmail.com" class="card_back_cta">Get in touch</a>
+                  </div>
+                </div>
+
               </div>
-              <div id="box-color-img">
-                <img src="./asserts/profile_pt.jpg" alt="Nhieu Pham profile" />
-              </div>
-              <div id="box-color"></div>
             </div>
           </div>
         </section>
@@ -238,12 +273,30 @@
             <p id="header_certification_text">Certificates</p>
           </div>
           <div class="lst_cert fade-in">
-            <button class="cert_btn" aria-label="View Java certificate"><img class="img_cert" src="asserts/cert/java.png" alt="Java certificate" /></button>
-            <button class="cert_btn" aria-label="View CI/CD certificate"><img class="img_cert" src="asserts/cert/cicd.png" alt="CI/CD certificate" /></button>
-            <button class="cert_btn" aria-label="View SQL certificate"><img class="img_cert" src="asserts/cert/sql.png" alt="SQL certificate" /></button>
-            <button class="cert_btn" aria-label="View Android certificate"><img class="img_cert" src="asserts/cert/android.png" alt="Android certificate" /></button>
-            <button class="cert_btn" aria-label="View React certificate"><img class="img_cert" src="asserts/cert/react.png" alt="React certificate" /></button>
-            <button class="cert_btn" aria-label="View React Redux certificate"><img class="img_cert" src="asserts/cert/react_redux.png" alt="React Redux certificate" /></button>
+            <div class="cert_scene"><div class="cert_flip flip_clickable">
+              <div class="cert_face cert_front"><img class="img_cert" src="asserts/cert/java.png" alt="Java certificate" /></div>
+              <div class="cert_face cert_back"><div class="cert_back_inner" style="--cb:#e8f5e9"><span>☕</span><h4>Java</h4><p>Programming</p></div></div>
+            </div></div>
+            <div class="cert_scene"><div class="cert_flip flip_clickable">
+              <div class="cert_face cert_front"><img class="img_cert" src="asserts/cert/cicd.png" alt="CI/CD certificate" /></div>
+              <div class="cert_face cert_back"><div class="cert_back_inner" style="--cb:#e3f2fd"><span>🔄</span><h4>CI / CD</h4><p>DevOps Pipeline</p></div></div>
+            </div></div>
+            <div class="cert_scene"><div class="cert_flip flip_clickable">
+              <div class="cert_face cert_front"><img class="img_cert" src="asserts/cert/sql.png" alt="SQL certificate" /></div>
+              <div class="cert_face cert_back"><div class="cert_back_inner" style="--cb:#fce4ec"><span>🗄️</span><h4>SQL</h4><p>Database</p></div></div>
+            </div></div>
+            <div class="cert_scene"><div class="cert_flip flip_clickable">
+              <div class="cert_face cert_front"><img class="img_cert" src="asserts/cert/android.png" alt="Android certificate" /></div>
+              <div class="cert_face cert_back"><div class="cert_back_inner" style="--cb:#e8f5e9"><span>📱</span><h4>Android</h4><p>Development</p></div></div>
+            </div></div>
+            <div class="cert_scene"><div class="cert_flip flip_clickable">
+              <div class="cert_face cert_front"><img class="img_cert" src="asserts/cert/react.png" alt="React certificate" /></div>
+              <div class="cert_face cert_back"><div class="cert_back_inner" style="--cb:#e1f5fe"><span>⚛️</span><h4>React</h4><p>Frontend</p></div></div>
+            </div></div>
+            <div class="cert_scene"><div class="cert_flip flip_clickable">
+              <div class="cert_face cert_front"><img class="img_cert" src="asserts/cert/react_redux.png" alt="React Redux certificate" /></div>
+              <div class="cert_face cert_back"><div class="cert_back_inner" style="--cb:#ede7f6"><span>🔀</span><h4>Redux</h4><p>State Management</p></div></div>
+            </div></div>
           </div>
         </section>
 
@@ -630,6 +683,11 @@
       draw();
     }
     initParticles();
+
+    // ─── Click-to-flip cho tất cả flip cards ─────────────────────────────────
+    document.querySelectorAll('.flip_clickable').forEach(card => {
+      card.addEventListener('click', () => card.classList.toggle('flipped'));
+    });
     </script>
   </body>
 </html>

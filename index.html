@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nhieu Pham | Fullstack Software Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="profile.css" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LRZ8W8XRRS"></script>
     <script>
@@ -14,6 +17,12 @@
     </script>
   </head>
   <body>
+    <!-- Cursor glow follower -->
+    <div id="cursor_glow" aria-hidden="true"></div>
+
+    <!-- Scroll progress bar -->
+    <div id="scroll_progress" role="progressbar" aria-label="Reading progress"></div>
+
     <div class="container">
       <header class="header">
         <div class="header-content">
@@ -29,10 +38,11 @@
             </div>
             <div class="menu_link">
               <nav class="menu" aria-label="Primary navigation">
-                <a href="#header_about_me_text">About</a>
-                <a href="#header_skill_text">Skills</a>
-                <a href="#header_certification_text">Certificates</a>
-                <a href="#header_experience_text">Work</a>
+                <a href="#header_about_me_text" data-section="about">About</a>
+                <a href="#header_skill_text" data-section="skills">Skills</a>
+                <a href="#header_certification_text" data-section="certs">Certificates</a>
+                <a href="#header_experience_text" data-section="experience">Work</a>
+                <a href="#contact" data-section="contact">Contact</a>
               </nav>
               <div class="menu_theme">
                 <span>Theme</span>
@@ -46,10 +56,30 @@
       </header>
 
       <main class="content_container" id="top">
+
+        <!-- ── Hero ─────────────────────────────────────── -->
         <section class="banner">
+          <!-- Particle canvas background -->
+          <canvas id="hero_canvas" aria-hidden="true"></canvas>
+
+          <!-- Floating 3D wireframe decorations -->
+          <div class="deco_cube deco_cube_1" aria-hidden="true">
+            <div class="cf cf_f"></div><div class="cf cf_bk"></div>
+            <div class="cf cf_l"></div><div class="cf cf_r"></div>
+            <div class="cf cf_t"></div><div class="cf cf_bt"></div>
+          </div>
+          <div class="deco_cube deco_cube_2" aria-hidden="true">
+            <div class="cf cf_f"></div><div class="cf cf_bk"></div>
+            <div class="cf cf_l"></div><div class="cf cf_r"></div>
+            <div class="cf cf_t"></div><div class="cf cf_bt"></div>
+          </div>
+          <div class="deco_ring" aria-hidden="true"></div>
+
           <div class="introduce fade-in">
-            <span class="eyebrow">Fullstack Software Developer / Android Developer</span>
-            <h1>Hi, I'm Nhieu Pham.</h1>
+            <span class="eyebrow">
+              <span id="typewriter"></span><span class="tw_cursor">|</span>
+            </span>
+            <h1>Hi, I'm<br /><span class="gradient_name">Nhieu Pham.</span></h1>
             <p>
               I am a Fullstack Software Developer and Android Developer based in Da Nang, Viet Nam, with 5 years of hands-on experience across Java Spring Boot, RESTful APIs, PostgreSQL, Docker, and Android Kotlin.
             </p>
@@ -57,19 +87,19 @@
               This profile introduces my background, skills, certificates, and work experience across backend development, mobile development, and practical AI workflow exploration.
             </p>
             <div class="hero_actions">
-              <a class="primary_cta" href="#header_experience_text">View experience</a>
+              <a class="primary_cta shimmer_btn" href="#header_experience_text">View experience</a>
               <a class="secondary_cta" href="https://github.com/nhieupv-coder" target="_blank" rel="noreferrer">GitHub profile</a>
             </div>
             <div class="hero_stats">
-              <div>
-                <strong>5+</strong>
+              <div class="stat_card tilt_target">
+                <strong><span class="countup" data-to="5" data-suffix="+">0+</span></strong>
                 <span>Years experience</span>
               </div>
-              <div>
+              <div class="stat_card tilt_target">
                 <strong>2025</strong>
                 <span>Android Kotlin focus</span>
               </div>
-              <div>
+              <div class="stat_card tilt_target">
                 <strong>AI</strong>
                 <span>Agents, MCP, Workflow</span>
               </div>
@@ -87,26 +117,27 @@
                 <img src="./asserts/ic_location.png" width="15" height="15" alt="" />
                 Da Nang, Viet Nam
               </span>
-              <span>
+              <span class="open_badge">
                 <img src="./asserts/ic_work.png" width="15" height="15" alt="" />
                 Open To Work
               </span>
             </div>
             <div class="icon_network">
-              <button onClick="goToLink('https://github.com/nhieupv-coder')" aria-label="GitHub">
+              <a href="https://github.com/nhieupv-coder" target="_blank" rel="noreferrer" class="network_btn magnetic" aria-label="GitHub">
                 <img src="./asserts/icon_network/ic_git.svg" alt="" />
-              </button>
-              <button onClick="goToLink('https://www.linkedin.com/in/nhi%E1%BB%81u-ph%E1%BA%A1m-6a3126234/')" aria-label="LinkedIn">
+              </a>
+              <a href="https://www.linkedin.com/in/nhi%E1%BB%81u-ph%E1%BA%A1m-6a3126234/" target="_blank" rel="noreferrer" class="network_btn magnetic" aria-label="LinkedIn">
                 <img src="./asserts/icon_network/ic_twiter.svg" alt="" />
-              </button>
-              <button aria-label="Figma">
-                <img src="./asserts/icon_network/ic_figma.svg" alt="" />
-              </button>
+              </a>
+              <a href="mailto:phamvannhieu2001@gmail.com" class="network_btn magnetic" aria-label="Email">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </a>
             </div>
           </div>
+
           <div class="align_thumbnail fade-in-rtl">
-            <div class="thumbnail">
-              <div class="photo_caption">
+            <div class="thumbnail tilt_target tilt_strong">
+              <div class="photo_caption float_anim">
                 <span>Available for backend / Android roles</span>
                 <strong>Da Nang, Viet Nam</strong>
               </div>
@@ -118,111 +149,79 @@
           </div>
         </section>
 
-        <section class="section">
+        <!-- ── About ─────────────────────────────────────── -->
+        <section class="section" id="section_about">
           <div class="partition_header">
             <p id="header_about_me_text">About me</p>
           </div>
           <div class="about_content">
             <div class="about_image fade-in-rtl">
-              <div id="box_img">
+              <div id="box_img" class="tilt_target tilt_strong">
                 <img src="./asserts/avatar.jpg" alt="Nhieu Pham avatar" />
               </div>
               <div id="box_gray"></div>
             </div>
-            <div id="about_text" class="fade-in">
+            <div id="about_text" class="fade-in tilt_target">
               <span class="section_number">01</span>
               <h2>Backend foundation, mobile execution, product-minded delivery.</h2>
-              <p>
-                I started learning programming in 2019. The first language I encountered was C++, which helped me understand the syntax and programming mindset used across many languages.
-              </p>
-              <p>
-                After that, I learned Java, OOP, Java EE, Java Swing, Java Servlet, Spring MVC, and Spring Boot. This foundation led me to become a Java backend developer.
-              </p>
-              <p>
-                During my work, I also worked with JavaScript, HTML, CSS, Node.js, React.js, and Android Kotlin. From 2025 until now, my daily work has focused more deeply on Android: building mobile features, integrating APIs, handling app flows, and improving user-facing product experiences.
-              </p>
-              <p>
-                Recently, I have also expanded into AI-enabled development by learning agent workflows, MCP servers, tool calling, and workflow automation patterns.
-              </p>
+              <p>I started learning programming in 2019. The first language I encountered was C++, which helped me understand the syntax and programming mindset used across many languages.</p>
+              <p>After that, I learned Java, OOP, Java EE, Java Swing, Java Servlet, Spring MVC, and Spring Boot. This foundation led me to become a Java backend developer.</p>
+              <p>During my work, I also worked with JavaScript, HTML, CSS, Node.js, React.js, and Android Kotlin. From 2025 until now, my daily work has focused more deeply on Android.</p>
+              <p>Recently, I have also expanded into AI-enabled development by learning agent workflows, MCP servers, tool calling, and workflow automation patterns.</p>
             </div>
           </div>
         </section>
 
-        <section class="section">
+        <!-- ── Skills ─────────────────────────────────────── -->
+        <section class="section" id="section_skills">
           <div class="partition_header">
             <p id="header_skill_text">Skills</p>
           </div>
           <p class="section_intro fade-in">
             The tools and technologies I use to move between backend services, Android screens, and automation workflows.
           </p>
-          <div class="skill_grid fade-in">
-            <div class="skill_item">
-              <img src="./asserts/icon_skill/icon-java.svg" alt="" />
-              <p>Java</p>
-            </div>
-            <div class="skill_item">
-              <img src="./asserts/icon_skill/icon_spring_boot.svg" alt="" />
-              <p>Spring Boot</p>
-            </div>
-            <div class="skill_item">
-              <img src="./asserts/icon_skill/icon_docker.svg" alt="" />
-              <p>Docker</p>
-            </div>
-            <div class="skill_item">
-              <img src="./asserts/icon_skill/icon_thymleaf.svg" alt="" />
-              <p>Thymeleaf</p>
-            </div>
-            <div class="skill_item">
-              <img src="./asserts/icon_skill/icon_restapi.svg" alt="" />
-              <p>REST API</p>
-            </div>
-            <div class="skill_item">
-              <img src="./asserts/icon_skill/icon-kotlin.svg" alt="" />
-              <p>Kotlin</p>
-            </div>
-            <div class="skill_item">
-              <img src="./asserts/icon_skill/icon-postgresql.svg" alt="" />
-              <p>PostgreSQL</p>
-            </div>
-            <div class="skill_item">
-              <img src="./asserts/icon_skill/icon-git.svg" alt="" />
-              <p>Git</p>
-            </div>
-            <div class="skill_item">
-              <img src="./asserts/icon_skill/ic-android.svg" alt="" />
-              <p>Android</p>
-            </div>
+          <div class="skill_grid">
+            <div class="skill_item tilt_target fade-in" style="--stagger:0"><img src="./asserts/icon_skill/icon-java.svg" alt="" /><p>Java</p></div>
+            <div class="skill_item tilt_target fade-in" style="--stagger:1"><img src="./asserts/icon_skill/icon_spring_boot.svg" alt="" /><p>Spring Boot</p></div>
+            <div class="skill_item tilt_target fade-in" style="--stagger:2"><img src="./asserts/icon_skill/icon_docker.svg" alt="" /><p>Docker</p></div>
+            <div class="skill_item tilt_target fade-in" style="--stagger:3"><img src="./asserts/icon_skill/icon_thymleaf.svg" alt="" /><p>Thymeleaf</p></div>
+            <div class="skill_item tilt_target fade-in" style="--stagger:4"><img src="./asserts/icon_skill/icon_restapi.svg" alt="" /><p>REST API</p></div>
+            <div class="skill_item tilt_target fade-in" style="--stagger:5"><img src="./asserts/icon_skill/icon-kotlin.svg" alt="" /><p>Kotlin</p></div>
+            <div class="skill_item tilt_target fade-in" style="--stagger:6"><img src="./asserts/icon_skill/icon-postgresql.svg" alt="" /><p>PostgreSQL</p></div>
+            <div class="skill_item tilt_target fade-in" style="--stagger:7"><img src="./asserts/icon_skill/icon-git.svg" alt="" /><p>Git</p></div>
+            <div class="skill_item tilt_target fade-in" style="--stagger:8"><img src="./asserts/icon_skill/ic-android.svg" alt="" /><p>Android</p></div>
           </div>
+
           <div class="ai_expertise fade-in">
             <div class="ai_intro">
               <span class="eyebrow">AI knowledge</span>
               <h2>Applied AI engineering</h2>
-              <p>
-                I understand how to apply AI capabilities inside real products by connecting models with tools, structured context, and repeatable workflows.
-              </p>
+              <p>I understand how to apply AI capabilities inside real products by connecting models with tools, structured context, and repeatable workflows.</p>
             </div>
             <div class="ai_grid">
-              <div class="ai_card">
+              <div class="ai_card tilt_target">
+                <div class="ai_card_icon">🤖</div>
                 <h3>AI Agents</h3>
                 <p>Designing agents that can plan, call tools, use context, and complete multi-step tasks.</p>
               </div>
-              <div class="ai_card">
+              <div class="ai_card tilt_target">
+                <div class="ai_card_icon">🔌</div>
                 <h3>MCP</h3>
                 <p>Understanding Model Context Protocol concepts for connecting AI assistants with external systems and data.</p>
               </div>
-              <div class="ai_card">
+              <div class="ai_card tilt_target">
+                <div class="ai_card_icon">⚙️</div>
                 <h3>Workflow Automation</h3>
                 <p>Building practical workflows that combine APIs, business rules, and AI-assisted decision making.</p>
               </div>
             </div>
           </div>
+
           <div class="mobile_focus fade-in">
             <div>
               <span class="eyebrow">Mobile focus</span>
               <h2>Android development since 2025</h2>
-              <p>
-                I have hands-on experience building Android app features with Kotlin, connecting mobile screens to backend APIs, handling application flows, and collaborating across backend and mobile responsibilities.
-              </p>
+              <p>I have hands-on experience building Android app features with Kotlin, connecting mobile screens to backend APIs, handling application flows, and collaborating across backend and mobile responsibilities.</p>
             </div>
             <ul>
               <li>Kotlin-based Android feature development</li>
@@ -233,21 +232,23 @@
           </div>
         </section>
 
-        <section class="section">
+        <!-- ── Certificates ───────────────────────────────── -->
+        <section class="section" id="section_certs">
           <div class="partition_header">
             <p id="header_certification_text">Certificates</p>
           </div>
           <div class="lst_cert fade-in">
-            <img class="img_cert" src="asserts/cert/java.png" alt="Java certificate" />
-            <img class="img_cert" src="asserts/cert/cicd.png" alt="CI/CD certificate" />
-            <img class="img_cert" src="asserts/cert/sql.png" alt="SQL certificate" />
-            <img class="img_cert" src="asserts/cert/android.png" alt="Android certificate" />
-            <img class="img_cert" src="asserts/cert/react.png" alt="React certificate" />
-            <img class="img_cert" src="asserts/cert/react_redux.png" alt="React Redux certificate" />
+            <button class="cert_btn" aria-label="View Java certificate"><img class="img_cert" src="asserts/cert/java.png" alt="Java certificate" /></button>
+            <button class="cert_btn" aria-label="View CI/CD certificate"><img class="img_cert" src="asserts/cert/cicd.png" alt="CI/CD certificate" /></button>
+            <button class="cert_btn" aria-label="View SQL certificate"><img class="img_cert" src="asserts/cert/sql.png" alt="SQL certificate" /></button>
+            <button class="cert_btn" aria-label="View Android certificate"><img class="img_cert" src="asserts/cert/android.png" alt="Android certificate" /></button>
+            <button class="cert_btn" aria-label="View React certificate"><img class="img_cert" src="asserts/cert/react.png" alt="React certificate" /></button>
+            <button class="cert_btn" aria-label="View React Redux certificate"><img class="img_cert" src="asserts/cert/react_redux.png" alt="React Redux certificate" /></button>
           </div>
         </section>
 
-        <section class="section">
+        <!-- ── Experience ─────────────────────────────────── -->
+        <section class="section" id="section_experience">
           <div class="partition_header">
             <p id="header_experience_text">Experience</p>
           </div>
@@ -255,167 +256,380 @@
           <div class="timeline">
             <article class="experience_item">
               <div class="time_line">
-                <div class="time_line_text">
+                <div class="time_line_text tilt_target">
                   <h3>Android developer</h3>
                   <p>2025 - Present</p>
                 </div>
               </div>
-              <div class="ui_draw">
-                <div class="border">
-                  <div class="circle mobile_circle"></div>
-                </div>
-              </div>
-              <div class="desctiption_time_line">
+              <div class="ui_draw"><div class="border"><div class="circle mobile_circle"></div></div></div>
+              <div class="desctiption_time_line tilt_target">
                 <h3>Android development focus at FPT Software</h3>
                 <ul>
-                  <li>I have been working more deeply on Android development with Kotlin since 2025.</li>
-                  <li>I implement mobile app features, integrate REST APIs, and connect app screens with backend services.</li>
-                  <li>I use my backend experience to understand data contracts, troubleshoot API behavior, and build smoother mobile workflows.</li>
+                  <li>Working more deeply on Android development with Kotlin since 2025.</li>
+                  <li>Implement mobile app features, integrate REST APIs, and connect app screens with backend services.</li>
+                  <li>Use backend experience to understand data contracts, troubleshoot API behavior, and build smoother mobile workflows.</li>
                 </ul>
               </div>
             </article>
-
             <article class="experience_item">
               <div class="time_line">
-                <div class="time_line_text">
+                <div class="time_line_text tilt_target">
                   <h3>Fullstack software developer</h3>
                   <p>Dec 2023 - 2024</p>
                 </div>
               </div>
-              <div class="ui_draw">
-                <div class="border">
-                  <div class="circle"></div>
-                </div>
-              </div>
-              <div class="desctiption_time_line">
+              <div class="ui_draw"><div class="border"><div class="circle"></div></div></div>
+              <div class="desctiption_time_line tilt_target">
                 <h3>Fullstack software developer at FPT Software</h3>
                 <ul>
-                  <li>I participated in a health application development project for Japanese customers.</li>
-                  <li>I handled backend development and started contributing to mobile app features using Android Kotlin.</li>
-                  <li>I worked with Java Spring Boot, Android Kotlin, RESTful APIs, PostgreSQL, Docker, and AI-assisted workflow exploration.</li>
+                  <li>Participated in a health application development project for Japanese customers.</li>
+                  <li>Handled backend development and started contributing to mobile app features using Android Kotlin.</li>
+                  <li>Worked with Java Spring Boot, Android Kotlin, RESTful APIs, PostgreSQL, Docker, and AI-assisted workflow exploration.</li>
                 </ul>
               </div>
             </article>
-
             <article class="experience_item">
               <div class="time_line">
-                <div class="time_line_text">
+                <div class="time_line_text tilt_target">
                   <h3>Java software developer</h3>
                   <p>Sep 2021 - Dec 2023</p>
                 </div>
               </div>
-              <div class="ui_draw">
-                <div class="border">
-                  <div class="circle"></div>
-                </div>
-              </div>
-              <div class="desctiption_time_line">
+              <div class="ui_draw"><div class="border"><div class="circle"></div></div></div>
+              <div class="desctiption_time_line tilt_target">
                 <h3>Java software developer at FPT Software</h3>
                 <ul>
-                  <li>I participated in a health application development project for Japanese customers.</li>
-                  <li>I joined this project as a backend developer, gaining experience in requirements analysis, backend coding, and unit testing.</li>
-                  <li>I worked with Java Spring Boot, RESTful APIs, PostgreSQL, Docker, and other related technologies.</li>
+                  <li>Participated in a health application development project for Japanese customers.</li>
+                  <li>Joined as a backend developer, gaining experience in requirements analysis, backend coding, and unit testing.</li>
+                  <li>Worked with Java Spring Boot, RESTful APIs, PostgreSQL, Docker, and other related technologies.</li>
                 </ul>
               </div>
             </article>
-
             <article class="experience_item">
               <div class="time_line">
-                <div class="time_line_text">
+                <div class="time_line_text tilt_target">
                   <h3>College Student</h3>
                   <p>Sep 2019 - Sep 2021</p>
                 </div>
               </div>
-              <div class="ui_draw">
-                <div class="border">
-                  <div class="circle circle_alt"></div>
-                </div>
-              </div>
-              <div class="desctiption_time_line">
+              <div class="ui_draw"><div class="border"><div class="circle circle_alt"></div></div></div>
+              <div class="desctiption_time_line tilt_target">
                 <h3>Student of Faculty of Information Technology at FPT Polytechnic College</h3>
                 <ul>
-                  <li>I graduated with a GPA of 9.1.</li>
+                  <li>Graduated with a GPA of 9.1.</li>
                   <li>First prize of FPT EDU Hackathon 2021.</li>
                 </ul>
               </div>
             </article>
           </div>
         </section>
+
+        <!-- ── Contact ────────────────────────────────────── -->
+        <section class="section contact_section" id="contact">
+          <div class="contact_inner fade-in">
+            <span class="eyebrow">Get in touch</span>
+            <h2>Let's work together</h2>
+            <p>I'm currently open to backend and Android roles. Whether you have a project in mind, a question, or just want to say hi — my inbox is always open.</p>
+            <a href="mailto:phamvannhieu2001@gmail.com" class="primary_cta contact_cta shimmer_btn">Send me an email</a>
+            <div class="contact_links">
+              <a href="https://github.com/nhieupv-coder" target="_blank" rel="noreferrer" class="contact_link">
+                <img src="./asserts/icon_network/ic_git.svg" alt="" />GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/nhi%E1%BB%81u-ph%E1%BA%A1m-6a3126234/" target="_blank" rel="noreferrer" class="contact_link">
+                <img src="./asserts/icon_network/ic_twiter.svg" alt="" />LinkedIn
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
+      <footer class="footer">
+        <div class="footer_inner">
+          <span class="brand_mark_sm">NP</span>
+          <p>Designed &amp; built by Nhieu Pham &mdash; Da Nang, Viet Nam &copy; 2025</p>
+          <div class="footer_links">
+            <a href="https://github.com/nhieupv-coder" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/nhi%E1%BB%81u-ph%E1%BA%A1m-6a3126234/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="mailto:phamvannhieu2001@gmail.com">Email</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Back to top -->
+    <button id="back_to_top" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <!-- Certificate lightbox -->
+    <div id="cert_lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Certificate viewer">
+      <button class="lightbox_close" id="lightbox_close" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <img id="lightbox_img" src="" alt="" />
     </div>
 
     <script>
-      let isDarkTheme = false;
-      const body = document.body;
-      const header = document.querySelector(".header");
-      const menu = document.querySelector(".menu");
-      const menuTheme = document.querySelector(".menu_theme");
-      const menuLink = document.querySelector(".menu_link");
-      const moreButton = document.getElementById("more");
-      const closeMenuButton = document.getElementById("close_menu_rep");
-      const themeToggle = document.getElementById("theme_toggle");
+    // ─── Theme ────────────────────────────────────────────────────────────────
+    let isDarkTheme = localStorage.getItem('theme') === 'dark';
+    const body = document.body;
+    if (isDarkTheme) body.classList.add('body_dark_mode');
 
-      function closeMenu(){
-        header.classList.remove("header_reposive");
-        menu.classList.remove("display_css");
-        menuTheme.classList.remove("display_css");
-        menuLink.classList.remove("display_css");
-        moreButton.classList.remove("hide_css");
-        closeMenuButton.classList.remove("display_css_block");
-      }
+    const header     = document.querySelector('.header');
+    const menu       = document.querySelector('.menu');
+    const menuTheme  = document.querySelector('.menu_theme');
+    const menuLink   = document.querySelector('.menu_link');
+    const moreButton = document.getElementById('more');
+    const closeBtn   = document.getElementById('close_menu_rep');
+    const themeToggle= document.getElementById('theme_toggle');
 
-      function dispalyMenu(){
-        header.classList.add("header_reposive");
-        menu.classList.add("display_css");
-        menuTheme.classList.add("display_css");
-        menuLink.classList.add("display_css");
-        moreButton.classList.add("hide_css");
-        closeMenuButton.classList.add("display_css_block");
-      }
+    function closeMenu() {
+      header.classList.remove('header_reposive');
+      [menu, menuTheme, menuLink].forEach(el => el.classList.remove('display_css'));
+      moreButton.classList.remove('hide_css');
+      closeBtn.classList.remove('display_css_block');
+    }
+    function openMenu() {
+      header.classList.add('header_reposive');
+      [menu, menuTheme, menuLink].forEach(el => el.classList.add('display_css'));
+      moreButton.classList.add('hide_css');
+      closeBtn.classList.add('display_css_block');
+    }
+    function toggleTheme() {
+      isDarkTheme = !isDarkTheme;
+      body.classList.toggle('body_dark_mode', isDarkTheme);
+      localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+      closeMenu();
+      initParticles(); // re-init with new color
+    }
 
-      function goToLink(url) {
-        window.location = url;
-      }
+    moreButton.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    themeToggle.addEventListener('click', toggleTheme);
+    document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', closeMenu));
 
-      function changeToDarkMode(){
-        if(!isDarkTheme){
-          body.classList.add("body_dark_mode");
-        }else{
-          body.classList.remove("body_dark_mode");
-        }
-        isDarkTheme = !isDarkTheme;
-        closeMenu();
-      }
+    // ─── Scroll progress ──────────────────────────────────────────────────────
+    const progressBar = document.getElementById('scroll_progress');
+    window.addEventListener('scroll', () => {
+      const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+      progressBar.style.width = pct + '%';
+    }, { passive: true });
 
-      moreButton.addEventListener("click", dispalyMenu);
-      closeMenuButton.addEventListener("click", closeMenu);
-      themeToggle.addEventListener("click", changeToDarkMode);
+    // ─── Back to top ──────────────────────────────────────────────────────────
+    const backToTop = document.getElementById('back_to_top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 500);
+    }, { passive: true });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-      document.querySelectorAll(".menu a").forEach((link) => {
-        link.addEventListener("click", closeMenu);
+    // ─── Active nav ───────────────────────────────────────────────────────────
+    const navSections = [
+      { id: 'section_about',      key: 'about' },
+      { id: 'section_skills',     key: 'skills' },
+      { id: 'section_certs',      key: 'certs' },
+      { id: 'section_experience', key: 'experience' },
+      { id: 'contact',            key: 'contact' },
+    ];
+    const navLinks = document.querySelectorAll('.menu a[data-section]');
+    const sectionObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting)
+          navLinks.forEach(l => l.classList.toggle('active', l.dataset.section === e.target.dataset.navKey));
       });
+    }, { threshold: 0.3 });
+    navSections.forEach(({ id, key }) => {
+      const el = document.getElementById(id);
+      if (el) { el.dataset.navKey = key; sectionObs.observe(el); }
+    });
 
-      document.querySelectorAll(".time_line").forEach((item) => item.classList.add("fade-in-ltr"));
-      document.querySelectorAll(".desctiption_time_line").forEach((item) => item.classList.add("fade-in-rtl"));
+    // ─── Fade-in scroll animations ────────────────────────────────────────────
+    document.querySelectorAll('.time_line').forEach(el => el.classList.add('fade-in-ltr'));
+    document.querySelectorAll('.desctiption_time_line').forEach(el => el.classList.add('fade-in-rtl'));
 
-      const fadeElements = document.querySelectorAll(".fade-in");
-      const fadeElementRtl = document.querySelectorAll(".fade-in-rtl");
-      const fadeElementsLtr = document.querySelectorAll(".fade-in-ltr");
+    const fadeObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in, .fade-in-rtl, .fade-in-ltr').forEach(el => fadeObs.observe(el));
 
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
+    // ─── Certificate lightbox ─────────────────────────────────────────────────
+    const lightbox      = document.getElementById('cert_lightbox');
+    const lightboxImg   = document.getElementById('lightbox_img');
+    const lightboxClose = document.getElementById('lightbox_close');
+    document.querySelectorAll('.cert_btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const img = btn.querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('open');
+        body.style.overflow = 'hidden';
+      });
+    });
+    function closeLightbox() { lightbox.classList.remove('open'); body.style.overflow = ''; }
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+    // ─── Cursor glow blob ─────────────────────────────────────────────────────
+    (function initCursorGlow() {
+      if (window.matchMedia('(hover: none)').matches) return;
+      const blob = document.getElementById('cursor_glow');
+      let cx = -400, cy = -400;
+      document.addEventListener('mousemove', e => {
+        cx = e.clientX; cy = e.clientY;
+        blob.style.setProperty('--cx', cx + 'px');
+        blob.style.setProperty('--cy', cy + 'px');
+      });
+    })();
+
+    // ─── 3D Tilt effect ───────────────────────────────────────────────────────
+    function initTilt() {
+      document.querySelectorAll('.tilt_target').forEach(el => {
+        const strong = el.classList.contains('tilt_strong');
+        const factor = strong ? 14 : 8;
+        el.addEventListener('mousemove', e => {
+          const r = el.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width  - 0.5;
+          const y = (e.clientY - r.top)  / r.height - 0.5;
+          el.style.transform =
+            `perspective(900px) rotateX(${(-y * factor).toFixed(2)}deg) rotateY(${(x * factor).toFixed(2)}deg) translateZ(${strong ? 14 : 8}px)`;
+          el.style.transition = 'transform 60ms linear';
         });
-      }, {
-        threshold: 0.1
+        el.addEventListener('mouseleave', () => {
+          el.style.transition = 'transform 400ms cubic-bezier(0.23, 1, 0.32, 1)';
+          el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+        });
       });
+    }
+    initTilt();
 
-      fadeElements.forEach(el => observer.observe(el));
-      fadeElementsLtr.forEach(el => observer.observe(el));
-      fadeElementRtl.forEach(el => observer.observe(el));
+    // ─── Magnetic buttons ─────────────────────────────────────────────────────
+    document.querySelectorAll('.magnetic').forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width  / 2) * 0.3;
+        const y = (e.clientY - r.top  - r.height / 2) * 0.3;
+        el.style.transform = `translate(${x}px, ${y}px)`;
+        el.style.transition = 'transform 80ms linear';
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transition = 'transform 400ms cubic-bezier(0.23, 1, 0.32, 1)';
+        el.style.transform = '';
+      });
+    });
+
+    // ─── Count-up animation ───────────────────────────────────────────────────
+    const countObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const to = parseInt(el.dataset.to, 10);
+        const suffix = el.dataset.suffix || '';
+        let start = null;
+        const dur = 1400;
+        function step(ts) {
+          if (!start) start = ts;
+          const p = Math.min((ts - start) / dur, 1);
+          const v = Math.floor((1 - Math.pow(1 - p, 3)) * to);
+          el.textContent = v + suffix;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        countObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.countup').forEach(el => countObs.observe(el));
+
+    // ─── Typewriter effect ────────────────────────────────────────────────────
+    (function initTypewriter() {
+      const el = document.getElementById('typewriter');
+      const cursor = document.querySelector('.tw_cursor');
+      if (!el) return;
+      const texts = [
+        'Fullstack Software Developer',
+        'Android Developer',
+        'AI Workflow Explorer',
+        'Java Spring Boot Engineer',
+      ];
+      let ti = 0, ci = 0, deleting = false;
+      let blinkTimer = setInterval(() => cursor.classList.toggle('tw_hide'), 530);
+      function tick() {
+        const t = texts[ti];
+        if (!deleting) {
+          el.textContent = t.slice(0, ++ci);
+          if (ci === t.length) { deleting = true; setTimeout(tick, 1800); return; }
+        } else {
+          el.textContent = t.slice(0, --ci);
+          if (ci === 0) { deleting = false; ti = (ti + 1) % texts.length; }
+        }
+        setTimeout(tick, deleting ? 45 : 80);
+      }
+      tick();
+    })();
+
+    // ─── Particle canvas (hero background) ───────────────────────────────────
+    let particleRAF;
+    function initParticles() {
+      const canvas = document.getElementById('hero_canvas');
+      if (!canvas) return;
+      cancelAnimationFrame(particleRAF);
+      const ctx = canvas.getContext('2d');
+      const banner = canvas.parentElement;
+      let W, H, pts = [];
+      const COUNT = Math.min(70, Math.floor(window.innerWidth / 18));
+
+      function resize() {
+        const r = banner.getBoundingClientRect();
+        W = canvas.width  = r.width;
+        H = canvas.height = r.height;
+      }
+
+      function mkPt() {
+        return {
+          x:  Math.random() * W,
+          y:  Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.38,
+          vy: (Math.random() - 0.5) * 0.38,
+          r:  Math.random() * 1.6 + 0.8,
+        };
+      }
+
+      resize();
+      new ResizeObserver(resize).observe(banner);
+      pts = Array.from({ length: COUNT }, mkPt);
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        const rgb = isDarkTheme ? '94,234,212' : '15,118,110';
+
+        pts.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+          if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${rgb},0.75)`;
+          ctx.fill();
+        });
+
+        for (let i = 0; i < pts.length; i++) {
+          for (let j = i + 1; j < pts.length; j++) {
+            const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+            const d  = Math.sqrt(dx * dx + dy * dy);
+            if (d < 130) {
+              ctx.beginPath();
+              ctx.moveTo(pts[i].x, pts[i].y);
+              ctx.lineTo(pts[j].x, pts[j].y);
+              ctx.strokeStyle = `rgba(${rgb},${((1 - d / 130) * 0.28).toFixed(3)})`;
+              ctx.lineWidth = 0.7;
+              ctx.stroke();
+            }
+          }
+        }
+        particleRAF = requestAnimationFrame(draw);
+      }
+      draw();
+    }
+    initParticles();
     </script>
   </body>
 </html>
